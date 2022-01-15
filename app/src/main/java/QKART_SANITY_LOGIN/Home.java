@@ -1,6 +1,4 @@
 package QKART_SANITY_LOGIN;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
@@ -20,18 +18,13 @@ public class Home {
             this.driver.get(this.url);
         }
     }
-
+    /*Function Name: PerformLogout => return true if logout succeeds else return false
+    */
     public Boolean PerformLogout() throws InterruptedException
     {
-        try{
-            WebElement logout_button = driver.findElement(By.className("MuiButton-text")); // Find the Logout Button
-            logout_button.click();
-            Thread.sleep(3000); // Wait for Logout to Complete
-             return true;
-        }catch(Exception e)
-        {
-            //Error while logout 
-            return false;
-        }
+        boolean status=false;
+        //TODO: Implement logout Logic
+
+        return status;
     }
 }

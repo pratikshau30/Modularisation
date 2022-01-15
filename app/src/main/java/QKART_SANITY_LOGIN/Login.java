@@ -19,18 +19,15 @@ public class Login {
             this.driver.get(this.url);
         }
     }
-
+    /*Function Name: PerformLogin => return true if login succeeds else return false
+    Params: Username: username value for login
+    Params: Password: password for the login
+    */
     public Boolean PerformLogin(String Username, String Password) throws InterruptedException
     {
-        WebElement username_txt_box = this.driver.findElement(By.id("username")); // Finding the Username Text Box
-        username_txt_box.sendKeys(Username); // Enter the username in the login page
-        Thread.sleep(1000); // Wait for user name to be entered
-        WebElement password_txt_box = this.driver.findElement(By.id("password")); // Finding the password Text Box
-        password_txt_box.sendKeys(Password);
-        WebElement login_button = driver.findElement(By.className("button")); // Click on Login Button
-        login_button.click(); // click the login Button
-        Thread.sleep(5000); // Wait for Login action to complete 
-        return this.VerifyUserLoggedIn(Username);
+        //TODO: Implement Logic for Login
+        
+        return this.VerifyUserLoggedIn(Username);  // Validation step if login action succeeded 
     }
 
     public Boolean VerifyUserLoggedIn(String Username)
