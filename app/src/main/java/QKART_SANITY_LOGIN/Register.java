@@ -17,7 +17,7 @@ public class Register {
             driver.get(this.url);
         }
     }
-    /*Function Name: registerUser
+    /*Function Name: registerUser -> returns boolean
     Params: Username: username value for registration
     Params: Password: password for the registered user
     Params makeUsernameDynamic: if true, add a dynamic value to the username and register else use the Username parameter as it is

@@ -19,7 +19,7 @@ public class Login {
             this.driver.get(this.url);
         }
     }
-    /*Function Name: PerformLogin => return true if login succeeds else return false
+    /*Function Name: PerformLogin -> return true if login succeeds else return false
     Params: Username: username value for login
     Params: Password: password for the login
     */

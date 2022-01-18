@@ -18,7 +18,7 @@ public class Home {
             this.driver.get(this.url);
         }
     }
-    /*Function Name: PerformLogout => return true if logout succeeds else return false
+    /*Function Name: PerformLogout -> return true if logout succeeds else return false
     */
     public Boolean PerformLogout() throws InterruptedException
     {
