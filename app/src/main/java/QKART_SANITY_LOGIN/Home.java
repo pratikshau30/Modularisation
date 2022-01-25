@@ -38,7 +38,7 @@ public class Home {
         return status;
     }
 
-    /*Function Name: VerifyLoginButton -> return true if Login Button Exists
+    /*Function Name: VerifyLoginButton -> return true if Register Button Exists
     */
     public Boolean VerifyRegisterButton() throws InterruptedException
     {
@@ -48,7 +48,7 @@ public class Home {
         return status;
     }
 
-    /*Function Name: clickLoginButton -> return true if Login Button was clicked 
+    /*Function Name: clickLoginButton -> return true if Register Button was clicked 
     */
     public Boolean clickRegisterButton() throws InterruptedException
     {

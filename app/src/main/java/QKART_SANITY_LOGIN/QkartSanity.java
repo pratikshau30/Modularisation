@@ -35,7 +35,6 @@ public class QkartSanity {
         status = homePage.VerifyLoginButton();
         logStatus("Step", "Test Case 1: Verify Login Button Exists : ", status? "PASS":"FAIL");
         status = homePage.clickLoginButton();
-        logStatus("Step", "Test Case 1: Verify Login Button Exists : ", status? "PASS":"FAIL");
         status = driver.getCurrentUrl().endsWith("/login");
         logStatus("Step", "Test Case 1: Verify that user navigates to login page when login button is clicked : ", status? "PASS":"FAIL");
         logStatus("End TestCase", "Test Case 1:Verify Functionality of Login button on home page  : ", status? "PASS":"FAIL");
@@ -51,7 +50,6 @@ public class QkartSanity {
         status = homePage.VerifyRegisterButton();
         logStatus("Step", "Test Case 1: Verify Register Button Exists : ", status? "PASS":"FAIL");
         status = homePage.clickRegisterButton();
-        logStatus("Step", "Test Case 1: Verify Login Button Exists : ", status? "PASS":"FAIL");
         status = driver.getCurrentUrl().endsWith("/register");
         logStatus("Step", "Test Case 1: Verify that user navigates to registration page when Register button is clicked : ", status? "PASS":"FAIL");
         logStatus("End TestCase", "Test Case 1:Verify Functionality of Register button on home page  : ", status? "PASS":"FAIL");
