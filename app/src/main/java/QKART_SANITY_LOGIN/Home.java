@@ -18,12 +18,42 @@ public class Home {
             this.driver.get(this.url);
         }
     }
-    /*Function Name: PerformLogout -> return true if logout succeeds else return false
+    /*Function Name: VerifyLoginButton -> return true if Login Button Exists
     */
-    public Boolean PerformLogout() throws InterruptedException
+    public Boolean VerifyLoginButton() throws InterruptedException
     {
         boolean status=false;
-        //TODO: Implement logout Logic
+        //TODO: Implement logic to verify existence of Login Button
+
+        return status;
+    }
+
+    /*Function Name: clickLoginButton -> return true if Login Button was clicked 
+    */
+    public Boolean clickLoginButton() throws InterruptedException
+    {
+        boolean status=false;
+        //TODO: Implement logic to click on Login Button
+
+        return status;
+    }
+
+    /*Function Name: VerifyLoginButton -> return true if Login Button Exists
+    */
+    public Boolean VerifyRegisterButton() throws InterruptedException
+    {
+        boolean status=false;
+        //TODO: Implement logic to verify existence of Register Button
+
+        return status;
+    }
+
+    /*Function Name: clickLoginButton -> return true if Login Button was clicked 
+    */
+    public Boolean clickRegisterButton() throws InterruptedException
+    {
+        boolean status=false;
+        //TODO: Implement logic to click on Register Button
 
         return status;
     }

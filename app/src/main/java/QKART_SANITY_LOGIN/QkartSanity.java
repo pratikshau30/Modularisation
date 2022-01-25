@@ -28,38 +28,34 @@ public class QkartSanity {
 
     public static Boolean TestCase01(ChromeDriver driver) throws InterruptedException {
         Boolean status;
-        logStatus("Start TestCase", "Test Case 1: Verify User Registration", "DONE");
-        Register registration = new Register(driver);
-        registration.navigateToRegisterPage();
-        status = registration.registerUser("testUser", "abc@123", true);
-        if (!status) {
-            logStatus("TestCase 1", "Test Case Failure. User Registration Failed", "FAIL");
-        }
-        lastGeneratedUserName = registration.lastGeneratedUsername;
-        Login login = new Login(driver);
-        login.navigateToLoginPage();
-        status = login.PerformLogin(lastGeneratedUserName, "abc@123");
-        Home home = new Home(driver);
-        status = home.PerformLogout();
-        logStatus("End TestCase", "Test Case 1: Verify user Regsitration : ", status? "PASS":"FAIL");
+        logStatus("Start TestCase", "Test Case 1: Verify Functionality of Login button on home page ", "DONE");
+        Home homePage = new Home(driver);
+        homePage.navigateToHome();
+        Thread.sleep(2000);
+        status = homePage.VerifyLoginButton();
+        logStatus("Step", "Test Case 1: Verify Login Button Exists : ", status? "PASS":"FAIL");
+        status = homePage.clickLoginButton();
+        logStatus("Step", "Test Case 1: Verify Login Button Exists : ", status? "PASS":"FAIL");
+        status = driver.getCurrentUrl().endsWith("/login");
+        logStatus("Step", "Test Case 1: Verify that user navigates to login page when login button is clicked : ", status? "PASS":"FAIL");
+        logStatus("End TestCase", "Test Case 1:Verify Functionality of Login button on home page  : ", status? "PASS":"FAIL");
         return status;
     }
 
     public static Boolean TestCase02(ChromeDriver driver) throws InterruptedException {
         Boolean status;
-        String TestStatus = "";
-        logStatus("Start Testcase", "Test Case 2: Verify User Registration with an existing username ", "DONE");
-        Register registration = new Register(driver);
-        registration.navigateToRegisterPage();
-        status = registration.registerUser(lastGeneratedUserName, "abc@123", false);
-        if (!status) {
-            TestStatus = "PASS";
-
-        } else {
-            TestStatus = "FAIL";
-        }
-        logStatus("End Testcase", "Test Case 2: Verify user Re-Regsitration", TestStatus);
-        return !status;
+        logStatus("Start TestCase", "Test Case 2: Verify Functionality of Register button on home page ", "DONE");
+        Home homePage = new Home(driver);
+        homePage.navigateToHome();
+        Thread.sleep(2000);
+        status = homePage.VerifyRegisterButton();
+        logStatus("Step", "Test Case 1: Verify Register Button Exists : ", status? "PASS":"FAIL");
+        status = homePage.clickRegisterButton();
+        logStatus("Step", "Test Case 1: Verify Login Button Exists : ", status? "PASS":"FAIL");
+        status = driver.getCurrentUrl().endsWith("/register");
+        logStatus("Step", "Test Case 1: Verify that user navigates to registration page when Register button is clicked : ", status? "PASS":"FAIL");
+        logStatus("End TestCase", "Test Case 1:Verify Functionality of Register button on home page  : ", status? "PASS":"FAIL");
+        return status;
     }
 
     public static void main(String[] args) throws InterruptedException {
