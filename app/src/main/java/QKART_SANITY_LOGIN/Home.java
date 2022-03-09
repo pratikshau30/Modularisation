@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Home {
     ChromeDriver driver;
-    String url = "https://crio-qkart-frontend.vercel.app"; 
+    String url = "https://crio-qkart-frontend-qa.vercel.app"; 
     public Home(ChromeDriver driver)
     {
         this.driver = driver;
