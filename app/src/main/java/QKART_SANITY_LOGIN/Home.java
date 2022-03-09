@@ -23,7 +23,7 @@ public class Home {
     public Boolean VerifyLoginButton() throws InterruptedException
     {
         boolean status=false;
-        //TODO: Implement logic to verify existence of Login Button
+        // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to verify existence of Login Button
 
         return status;
     }
@@ -33,7 +33,7 @@ public class Home {
     public Boolean clickLoginButton() throws InterruptedException
     {
         boolean status=false;
-        //TODO: Implement logic to click on Login Button
+        // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to click on Login Button
 
         return status;
     }
@@ -43,7 +43,7 @@ public class Home {
     public Boolean VerifyRegisterButton() throws InterruptedException
     {
         boolean status=false;
-        //TODO: Implement logic to verify existence of Register Button
+        // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to verify existence of Register Button
 
         return status;
     }
@@ -53,7 +53,7 @@ public class Home {
     public Boolean clickRegisterButton() throws InterruptedException
     {
         boolean status=false;
-        //TODO: Implement logic to click on Register Button
+        // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to click on Register Button
 
         return status;
     }
