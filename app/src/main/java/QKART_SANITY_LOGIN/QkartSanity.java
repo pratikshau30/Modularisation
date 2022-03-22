@@ -12,27 +12,27 @@ import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-
 public class QkartSanity {
 
     public static String lastGeneratedUserName;
+
     public static RemoteWebDriver createDriver() throws MalformedURLException {
-      // Launch Browser using Zalenium
-      final DesiredCapabilities capabilities = new DesiredCapabilities();
-      capabilities.setBrowserName(BrowserType.CHROME);
-      RemoteWebDriver driver = new RemoteWebDriver(new URL("http://localhost:8082/wd/hub"), capabilities);
+        // Launch Browser using Zalenium
+        final DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName(BrowserType.CHROME);
+        RemoteWebDriver driver = new RemoteWebDriver(new URL("http://localhost:8082/wd/hub"), capabilities);
 
-      // Maximize and Implicit Wait for things to initailize
-      driver.manage().window().maximize();
-      driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        // Maximize and Implicit Wait for things to initailize
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-      return driver;
+        return driver;
     }
 
-    public static void logStatus(String type, String message, String status) 
-    {
-        
-        System.out.println(String.format("%s |  %s  |  %s | %s", String.valueOf(java.time.LocalDateTime.now()) , type , message , status));
+    public static void logStatus(String type, String message, String status) {
+
+        System.out.println(String.format("%s |  %s  |  %s | %s", String.valueOf(java.time.LocalDateTime.now()), type,
+                message, status));
 
     }
 
@@ -43,11 +43,13 @@ public class QkartSanity {
         homePage.navigateToHome();
         Thread.sleep(2000);
         status = homePage.VerifyLoginButton();
-        logStatus("Step", "Test Case 1: Verify Login Button Exists : ", status? "PASS":"FAIL");
+        logStatus("Step", "Test Case 1: Verify Login Button Exists : ", status ? "PASS" : "FAIL");
         status = homePage.clickLoginButton();
         status = driver.getCurrentUrl().endsWith("/login");
-        logStatus("Step", "Test Case 1: Verify that user navigates to login page when login button is clicked : ", status? "PASS":"FAIL");
-        logStatus("End TestCase", "Test Case 1:Verify Functionality of Login button on home page  : ", status? "PASS":"FAIL");
+        logStatus("Step", "Test Case 1: Verify that user navigates to login page when login button is clicked : ",
+                status ? "PASS" : "FAIL");
+        logStatus("End TestCase", "Test Case 1:Verify Functionality of Login button on home page  : ",
+                status ? "PASS" : "FAIL");
         return status;
     }
 
@@ -58,11 +60,14 @@ public class QkartSanity {
         homePage.navigateToHome();
         Thread.sleep(2000);
         status = homePage.VerifyRegisterButton();
-        logStatus("Step", "Test Case 1: Verify Register Button Exists : ", status? "PASS":"FAIL");
+        logStatus("Step", "Test Case 1: Verify Register Button Exists : ", status ? "PASS" : "FAIL");
         status = homePage.clickRegisterButton();
         status = driver.getCurrentUrl().endsWith("/register");
-        logStatus("Step", "Test Case 1: Verify that user navigates to registration page when Register button is clicked : ", status? "PASS":"FAIL");
-        logStatus("End TestCase", "Test Case 1:Verify Functionality of Register button on home page  : ", status? "PASS":"FAIL");
+        logStatus("Step",
+                "Test Case 1: Verify that user navigates to registration page when Register button is clicked : ",
+                status ? "PASS" : "FAIL");
+        logStatus("End TestCase", "Test Case 1:Verify Functionality of Register button on home page  : ",
+                status ? "PASS" : "FAIL");
         return status;
     }
 

@@ -5,54 +5,53 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Home {
     RemoteWebDriver driver;
-    String url = "https://crio-qkart-frontend-qa.vercel.app"; 
-    public Home(RemoteWebDriver driver)
-    {
+    String url = "https://crio-qkart-frontend-qa.vercel.app";
+
+    public Home(RemoteWebDriver driver) {
         this.driver = driver;
     }
 
-    public void navigateToHome()
-    {
-        if(! this.driver.getCurrentUrl().equals(this.url))
-        {
+    public void navigateToHome() {
+        if (!this.driver.getCurrentUrl().equals(this.url)) {
             this.driver.get(this.url);
         }
     }
-    /*Function Name: VerifyLoginButton -> return true if Login Button Exists
-    */
-    public Boolean VerifyLoginButton() throws InterruptedException
-    {
-        boolean status=false;
+
+    /*
+     * Function Name: VerifyLoginButton -> return true if Login Button Exists
+     */
+    public Boolean VerifyLoginButton() throws InterruptedException {
+        boolean status = false;
         // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to verify existence of Login Button
 
         return status;
     }
 
-    /*Function Name: clickLoginButton -> return true if Login Button was clicked 
-    */
-    public Boolean clickLoginButton() throws InterruptedException
-    {
-        boolean status=false;
+    /*
+     * Function Name: clickLoginButton -> return true if Login Button was clicked
+     */
+    public Boolean clickLoginButton() throws InterruptedException {
+        boolean status = false;
         // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to click on Login Button
 
         return status;
     }
 
-    /*Function Name: VerifyLoginButton -> return true if Register Button Exists
-    */
-    public Boolean VerifyRegisterButton() throws InterruptedException
-    {
-        boolean status=false;
+    /*
+     * Function Name: VerifyLoginButton -> return true if Register Button Exists
+     */
+    public Boolean VerifyRegisterButton() throws InterruptedException {
+        boolean status = false;
         // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to verify existence of Register Button
 
         return status;
     }
 
-    /*Function Name: clickLoginButton -> return true if Register Button was clicked 
-    */
-    public Boolean clickRegisterButton() throws InterruptedException
-    {
-        boolean status=false;
+    /*
+     * Function Name: clickLoginButton -> return true if Register Button was clicked
+     */
+    public Boolean clickRegisterButton() throws InterruptedException {
+        boolean status = false;
         // TODO: CRIO_TASK_MODULE_DEBUGGING: Implement logic to click on Register Button
 
         return status;
