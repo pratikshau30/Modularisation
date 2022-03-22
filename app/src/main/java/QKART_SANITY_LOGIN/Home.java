@@ -1,12 +1,12 @@
 package QKART_SANITY_LOGIN;
+
 import org.openqa.selenium.chrome.ChromeDriver;
-
-
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class Home {
-    ChromeDriver driver;
+    RemoteWebDriver driver;
     String url = "https://crio-qkart-frontend-qa.vercel.app"; 
-    public Home(ChromeDriver driver)
+    public Home(RemoteWebDriver driver)
     {
         this.driver = driver;
     }

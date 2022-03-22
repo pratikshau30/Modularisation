@@ -3,20 +3,30 @@
  */
 package QKART_SANITY_LOGIN;
 
-import org.openqa.selenium.chrome.ChromeDriver;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 public class QkartSanity {
 
     public static String lastGeneratedUserName;
-    public static ChromeDriver createDriver() {
-        ChromeDriver driver;
-        // TODO: CRIO_TASK_MODULE_DEBUGGING: IMPORTANT! Enter the Driver Location here
-        String driverLocation = "/Users/praveenkumar/Documents/CrioDo/Java_Workspace_Grouping/Module1_2TCs_Standardization/app/chromedriver";//IMPORTANT!: Enter the Driver Location here 
-        System.setProperty("webdriver.chrome.driver", driverLocation);
-        driver = new ChromeDriver();
-        return driver;
+    public static RemoteWebDriver createDriver() throws MalformedURLException {
+      // Launch Browser using Zalenium
+      final DesiredCapabilities capabilities = new DesiredCapabilities();
+      capabilities.setBrowserName(BrowserType.CHROME);
+      RemoteWebDriver driver = new RemoteWebDriver(new URL("http://localhost:8082/wd/hub"), capabilities);
+
+      // Maximize and Implicit Wait for things to initailize
+      driver.manage().window().maximize();
+      driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+      return driver;
     }
 
     public static void logStatus(String type, String message, String status) 
@@ -26,7 +36,7 @@ public class QkartSanity {
 
     }
 
-    public static Boolean TestCase01(ChromeDriver driver) throws InterruptedException {
+    public static Boolean TestCase01(RemoteWebDriver driver) throws InterruptedException {
         Boolean status;
         logStatus("Start TestCase", "Test Case 1: Verify Functionality of Login button on home page ", "DONE");
         Home homePage = new Home(driver);
@@ -41,7 +51,7 @@ public class QkartSanity {
         return status;
     }
 
-    public static Boolean TestCase02(ChromeDriver driver) throws InterruptedException {
+    public static Boolean TestCase02(RemoteWebDriver driver) throws InterruptedException {
         Boolean status;
         logStatus("Start TestCase", "Test Case 2: Verify Functionality of Register button on home page ", "DONE");
         Home homePage = new Home(driver);
@@ -56,8 +66,8 @@ public class QkartSanity {
         return status;
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        ChromeDriver driver = createDriver();
+    public static void main(String[] args) throws InterruptedException, MalformedURLException {
+        RemoteWebDriver driver = createDriver();
 
         // Executing Test Case 1
         TestCase01(driver);
